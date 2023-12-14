@@ -1,0 +1,17 @@
+{
+  "name": "learning-jszip.ts",
+  "version": "1.0.0",
+  "description": "🧞🧞🧞 JSZipを使ってみる！",
+  "main": "./src/index.ts",
+  "repository": "https://github.com/osawa-koki/learning-jszip.ts.git",
+  "author": "osawa-koki <koki@osawa.dev>",
+  "license": "Apache-2.0",
+  "private": false,
+  "engines": {
+    "node": ">= 20.0.0",
+    "yarn": ">= 1.22.0"
+  },
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
