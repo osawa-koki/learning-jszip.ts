@@ -9,7 +9,7 @@ const dirPath = './files/'
 const files = fs.readdirSync(dirPath)
 
 files.forEach((file) => {
-  zip.file(file as string, fs.readFileSync(path.join(dirPath, file)))
+  zip.file(file, fs.readFileSync(path.join(dirPath, file)))
 })
 
 zip.generateAsync({ type: 'nodebuffer' })
