@@ -4,7 +4,7 @@ import JSZip from 'jszip'
 
 const zip = new JSZip()
 
-const dirPath = './files/'
+const dirPath = './example/'
 
 const files = fs.readdirSync(dirPath)
 
