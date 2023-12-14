@@ -1,14 +1,20 @@
 import fs from 'fs'
+import path from 'path'
 import JSZip from 'jszip'
 
 const zip = new JSZip()
 
-zip.file('hello.txt', 'Hello World\n')
-zip.file('hello2.txt', 'Hello World2\n')
+const dirPath = './files/'
+
+const files = fs.readdirSync(dirPath)
+
+files.forEach((file) => {
+  zip.file(file as string, fs.readFileSync(path.join(dirPath, file)))
+})
 
 zip.generateAsync({ type: 'nodebuffer' })
   .then((content) => {
-    fs.writeFileSync('example.zip', content)
+    fs.writeFileSync('./example.zip', content)
   }).catch((err) => {
     console.error(err)
   })
