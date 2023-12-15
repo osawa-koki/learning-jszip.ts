@@ -7,11 +7,19 @@ import JSZip from 'jszip'
   const dirPath = './example/'
   const zip = new JSZip()
 
-  const files = fs.readdirSync(dirPath)
-
-  files.forEach((file) => {
-    zip.file(file, fs.readFileSync(path.join(dirPath, file)))
-  })
+  const zipRecursively = (dirPath: string): void => {
+    const files = fs.readdirSync(dirPath)
+    files.forEach((file) => {
+      const filePath = path.join(dirPath, file)
+      const stat = fs.statSync(filePath)
+      if (stat.isDirectory()) {
+        zipRecursively(filePath)
+      } else {
+        zip.file(filePath, fs.readFileSync(filePath))
+      }
+    })
+  }
+  zipRecursively(dirPath)
 
   zip.generateAsync({ type: 'nodebuffer' })
     .then((content) => {
