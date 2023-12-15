@@ -3,6 +3,7 @@ import path from 'path'
 import JSZip from 'jszip'
 
 (() => {
+  // `example`ディレクトリのファイルをZIP化。
   const dirPath = './example/'
   const zip = new JSZip()
 
@@ -21,6 +22,7 @@ import JSZip from 'jszip'
 })();
 
 (() => {
+  // `data.zip`を解凍。
   const dirPath = './data/'
   const zipFile = fs.readFileSync('./data.zip')
   if (!fs.existsSync(dirPath)) {
