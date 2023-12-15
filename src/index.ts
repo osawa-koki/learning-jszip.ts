@@ -31,7 +31,7 @@ import JSZip from 'jszip'
 
 (() => {
   // `data.zip`を解凍。
-  const dirPath = './data/'
+  const dirPath = './'
   const zipFile = fs.readFileSync('./data.zip')
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath)
