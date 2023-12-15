@@ -3,7 +3,7 @@ import path from 'path'
 import JSZip from 'jszip'
 
 (() => {
-  const dirPath = './files/'
+  const dirPath = './example/'
   const zip = new JSZip()
 
   const files = fs.readdirSync(dirPath)
